@@ -13,5 +13,11 @@
 roboflow를 통해 이미지를 학습했다.
 (나중에 방법 입력 (김도영))
 
+**가상환경 세팅**
+```
+python3 -m venv venv
+source venv/bin/activate
+```
 **라이브러리 설치**
-> ` pip install roboflow ultralytics `
+
+` pip install roboflow ultralytics `
