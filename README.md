@@ -26,6 +26,8 @@ pip install ultralytics
 
 # 학습 실행
 yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
+
+cd ~/Downloads/wheelchair.v1i.yolov8
 ```
 **라이브러리 설치**
 
