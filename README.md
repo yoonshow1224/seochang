@@ -11,8 +11,12 @@
 
 ### 과정
 roboflow를 통해 이미지를 학습했다.
-(나중에 방법 입력 (김도영))
 
+Roboflow 데이터셋을 YOLOv8 형식으로 변환
+train/images, train/labels, valid/images, valid/labels
+구조로 다운로드
+
+Roboflow의 "YOLOv8 데이터셋 내보내기(Export)" 기능, 학습은 YOLOv8에서 직접 진행했다.
 **가상환경 세팅**
 ```
 # 가상환경 생성
