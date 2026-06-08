@@ -8,6 +8,7 @@
 * Ubuntu
 * 웹캠
 * 회전문
+<img width="320" height="351" alt="image" src="https://github.com/user-attachments/assets/eef352ae-fa60-4093-9330-9ca40b9e808e" />
 
 ### 과정
 roboflow를 통해 이미지를 학습했다.
