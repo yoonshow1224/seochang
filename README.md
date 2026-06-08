@@ -58,6 +58,8 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 
 <img width="522" height="448" alt="image" src="https://github.com/user-attachments/assets/73113449-a122-413a-81f9-1ed019b07dcf" />
 
+<img width="189" height="185" alt="image" src="https://github.com/user-attachments/assets/0061f7e2-4604-4939-9e5d-6ccf67d14f4c" />
+
 
 
 
