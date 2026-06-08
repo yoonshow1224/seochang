@@ -20,7 +20,7 @@ python3 -m venv venv
 
 # 가상환경 활성화
 source venv/bin/activate
-
+cd ~/Downloads/wheelchair.v1i.yolov8
 # YOLOv8 설치
 pip install ultralytics
 
