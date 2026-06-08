@@ -32,15 +32,18 @@ pip install ultralytics
 cd ~/Downloads/wheelchair.v1i.yolov8
 ```
 **라이브러리 설치**
-
+```
 ` pip install roboflow ultralytics `
 ` python3 -m venv yolo `
-
+```
 **YOLO8 학습**
-
+```
 yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
+```
 
 **학습 후 테스트**
-yolo detect predict \
+```
+  yolo detect predict \
   model=runs/detect/train/weights/best.pt \
   source=valid/images
+```
