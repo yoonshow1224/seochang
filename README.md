@@ -48,6 +48,8 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
   source=valid/images
 ```
 
+**테스트 결과**
+```
 <img width="320" height="351" alt="image" src="https://github.com/user-attachments/assets/47796a7c-b4e9-4072-987d-36dfe2becb1e" />
 
 <img width="210" height="272" alt="image" src="https://github.com/user-attachments/assets/72ba9268-1719-4335-8532-be9c4cd9b23e" />
@@ -55,7 +57,7 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 <img width="221" height="443" alt="image" src="https://github.com/user-attachments/assets/35c1afd5-ef02-404a-b2f5-829b4bec841d" />
 
 <img width="522" height="448" alt="image" src="https://github.com/user-attachments/assets/73113449-a122-413a-81f9-1ed019b07dcf" />
-
+```
 
 
 
