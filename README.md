@@ -25,14 +25,22 @@ python3 -m venv venv
 # 가상환경 활성화
 source venv/bin/activate
 cd ~/Downloads/wheelchair.v1i.yolov8
+
 # YOLOv8 설치
 pip install ultralytics
-
-# 학습 실행
-yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 
 cd ~/Downloads/wheelchair.v1i.yolov8
 ```
 **라이브러리 설치**
 
 ` pip install roboflow ultralytics `
+` python3 -m venv yolo `
+
+**YOLO8 학습**
+
+yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
+
+**학습 후 테스트**
+yolo detect predict \
+  model=runs/detect/train/weights/best.pt \
+  source=valid/images
