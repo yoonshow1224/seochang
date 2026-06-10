@@ -23,6 +23,7 @@ train/images, train/labels, valid/images, valid/labels
 구조로 다운로드
 
 Roboflow의 "YOLOv8 데이터셋 내보내기(Export)" 기능, 학습은 YOLOv8에서 직접 진행했다.
+
 **가상환경 세팅**
 ```
 # 가상환경 생성
@@ -54,9 +55,8 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 ```
 웹캠으로 보기
 ```
+source venv/bin/activate
 cd ~/Downloads/wheelchair.v1i.yolov8
-
-source ~/venv/bin/activate
 
 yolo detect predict \
     model=runs/detect/train/weights/best.pt \
