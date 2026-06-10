@@ -49,9 +49,16 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 
 **학습 후 테스트**
 ```
+이미지 판별
   yolo detect predict \
   model=runs/detect/train/weights/best.pt \
   source=valid/images
+웹캠으로 보기 
+source ~/venv/bin/activate
+
+yolo detect predict \
+    model=runs/detect/train/weights/best.pt \
+    source=0
 ```
 
 **테스트 결과**
