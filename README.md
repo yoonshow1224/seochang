@@ -34,8 +34,6 @@ cd ~/Downloads/wheelchair.v1i.yolov8
 
 # YOLOv8 설치
 pip install ultralytics
-
-cd ~/Downloads/wheelchair.v1i.yolov8
 ```
 **라이브러리 설치**
 ```
@@ -53,12 +51,17 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
   yolo detect predict \
   model=runs/detect/train/weights/best.pt \
   source=valid/images
-웹캠으로 보기 
+```
+웹캠으로 보기
+```
+cd ~/Downloads/wheelchair.v1i.yolov8
+
 source ~/venv/bin/activate
 
 yolo detect predict \
     model=runs/detect/train/weights/best.pt \
-    source=0
+    source=0 \
+    show=True
 ```
 
 **테스트 결과**
