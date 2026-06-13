@@ -80,6 +80,110 @@ yolo detect predict \
 <img width="189" height="185" alt="image" src="https://github.com/user-attachments/assets/0061f7e2-4604-4939-9e5d-6ccf67d14f4c" />
 
 
+**속도감지**
+'''
+import serial
+import time
+from collections import deque
+
+PORT = "/dev/ttyAMA0"
+BAUD = 256000
+
+ser = serial.Serial(PORT, BAUD, timeout=0.1)
+
+buffer = bytearray()
+
+# 최근 거리 저장: 약 1초치
+history = deque(maxlen=15)
+
+print("LD2410 filtered speed start")
+
+def parse_frame(frame):
+    moving_distance = frame[4] | (frame[5] << 8)
+    moving_energy = frame[6]
+
+    static_distance = frame[7] | (frame[8] << 8)
+    static_energy = frame[9]
+
+    detect_distance = frame[10] | (frame[11] << 8)
+
+    moving_distance &= 0x7FFF
+    static_distance &= 0x7FFF
+
+    return moving_distance, moving_energy, static_distance, static_energy, detect_distance
 
 
+def calc_speed(history):
+    if len(history) < 5:
+        return None
 
+    t1, d1 = history[0]
+    t2, d2 = history[-1]
+
+    dt = t2 - t1
+    if dt <= 0:
+        return None
+
+    # 거리 감소 = 다가옴 = 양수 속도
+    speed_cm_s = (d1 - d2) / dt
+    speed_m_s = speed_cm_s / 100
+    speed_km_h = speed_m_s * 3.6
+
+    return speed_m_s, speed_km_h
+
+
+while True:
+    data = ser.read(64)
+
+    if data:
+        buffer.extend(data)
+
+    while True:
+        start = buffer.find(b"\xAA\xFF\x03\x00")
+        if start == -1:
+            buffer.clear()
+            break
+
+        end = buffer.find(b"\x55\xCC", start)
+        if end == -1:
+            break
+
+        frame = buffer[start:end + 2]
+        buffer = buffer[end + 2:]
+
+        if len(frame) < 12:
+            continue
+
+        moving_cm, moving_energy, static_cm, static_energy, detect_cm = parse_frame(frame)
+
+        now = time.time()
+
+        # 너무 약한 신호는 버림
+        if moving_cm > 0 and moving_energy > 20:
+            history.append((now, moving_cm))
+
+            speed = calc_speed(history)
+
+            if speed:
+                speed_m_s, speed_km_h = speed
+
+                if speed_m_s > 0.1:
+                    direction = "다가오는 중"
+                elif speed_m_s < -0.1:
+                    direction = "멀어지는 중"
+                else:
+                    direction = "거의 정지"
+
+                print(
+                    f"거리:{moving_cm:4d}cm | "
+                    f"속도:{speed_m_s:+.2f}m/s | "
+                    f"{speed_km_h:+.2f}km/h | "
+                    f"{direction} | "
+                    f"energy:{moving_energy}"
+                )
+        else:
+            history.clear()
+            print("이동 타겟 없음")
+
+    time.sleep(0.03)
+'''
