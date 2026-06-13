@@ -93,7 +93,6 @@ ser = serial.Serial(PORT, BAUD, timeout=0.1)
 
 buffer = bytearray()
 
-# 최근 거리 저장: 약 1초치
 history = deque(maxlen=15)
 
 print("LD2410 filtered speed start")
@@ -157,8 +156,7 @@ while True:
         moving_cm, moving_energy, static_cm, static_energy, detect_cm = parse_frame(frame)
 
         now = time.time()
-
-        # 너무 약한 신호는 버림
+        
         if moving_cm > 0 and moving_energy > 20:
             history.append((now, moving_cm))
 
