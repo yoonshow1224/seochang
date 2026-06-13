@@ -47,6 +47,9 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 ```
 
 **학습 후 테스트**
+<img width="396" height="559" alt="SW공모전 순서도 drawio" src="https://github.com/user-attachments/assets/4b9df9f0-4f63-4437-ba85-1d284f9f024f" />
+
+
 ```
 이미지 판별
   yolo detect predict \
