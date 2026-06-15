@@ -47,8 +47,7 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 ```
 
 **학습 후 테스트**
-<img width="396" height="559" alt="SW공모전 순서도 drawio" src="https://github.com/user-attachments/assets/4b9df9f0-4f63-4437-ba85-1d284f9f024f" />
-
+%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20parent%3D%221%22%20style%3D%22text%3BstrokeColor%3Dnone%3BfillColor%3Dnone%3Balign%3Dleft%3BverticalAlign%3Dmiddle%3BspacingLeft%3D4%3BspacingRight%3D4%3Boverflow%3Dhidden%3Bpoints%3D%5B%5B0%2C0.5%5D%2C%5B1%2C0.5%5D%5D%3BportConstraint%3Deastwest%3Brotatable%3D0%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3B%22%20value%3D%22%EC%95%84%EB%8B%88%EC%98%A4%22%20vertex%3D%221%22%3E%3CmxGeometry%20height%3D%2230%22%20width%3D%2280%22%20x%3D%22500%22%20y%3D%22644%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E
 
 ```
 이미지 판별
