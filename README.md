@@ -57,8 +57,7 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
   model=runs/detect/train/weights/best.pt \
   source=valid/images
 ```
-https://download.mail.naver.com/file/download/each/?attachType=normal&mailSN=3947&attachIndex=2&virus=1&domain=mail.naver.com
-https://download.mail.naver.com/file/download/each/?attachType=normal&mailSN=3947&attachIndex=3&virus=1&domain=mail.naver.com
+
 웹캠으로 보기
 ```
 source venv/bin/activate
@@ -82,6 +81,12 @@ yolo detect predict \
 
 <img width="189" height="185" alt="image" src="https://github.com/user-attachments/assets/0061f7e2-4604-4939-9e5d-6ccf67d14f4c" />
 
+
+
+<img width="1079" height="978" alt="Screenshot_20260622_171557_Gallery" src="https://github.com/user-attachments/assets/88ad5545-4277-4d61-9781-9206e93bb031" />
+사람이 지나갈 때: 모터를 8 RPM으로
+<img width="1075" height="970" alt="Screenshot_20260622_171939_CapCut" src="https://github.com/user-attachments/assets/555c1d94-4bfb-49f1-a6ba-d6cfaaf95e51" />
+휠체어가 지나갈 때: 모터를 2 RPM으로
 
 **속도감지**
 '''
