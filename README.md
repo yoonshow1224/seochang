@@ -12,6 +12,7 @@
 ### 처리 과정
 1. 라즈베리파이 웹캠으로 카메라 정보를 수집한다.
 2. YOLOv8을 통해 휠체어가 감지되었는지 확인한다.
+   - YOLOv8은 다른 인식 모델에 비해 광범위한 AI지원과 빠른 속도, 정확성을 지원하기 때문에 이를 이용하였다.
 3. 서버를 사용하지 않고 라즈베리파이 자체에서 휠체어가 감지되었는지 확인하고 이에 따라 레이더 센서를 조작한다.
 4. 레이더 센서를 통해 휠체어의 이동속도를 감지하고 감지한 속도에 따라 회전문 속도를 변경시킨다.
 
@@ -56,6 +57,8 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
   model=runs/detect/train/weights/best.pt \
   source=valid/images
 ```
+https://download.mail.naver.com/file/download/each/?attachType=normal&mailSN=3947&attachIndex=2&virus=1&domain=mail.naver.com
+https://download.mail.naver.com/file/download/each/?attachType=normal&mailSN=3947&attachIndex=3&virus=1&domain=mail.naver.com
 웹캠으로 보기
 ```
 source venv/bin/activate
