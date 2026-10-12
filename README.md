@@ -60,6 +60,10 @@ yolo detect train model=yolov8n.pt data=data.yaml epochs=100 imgsz=640
 
 웹캠으로 보기
 ```
+  python wheelchair_radar_dual.py --imgsz 320
+
+
+
 source venv/bin/activate
 cd ~/Downloads/wheelchair.v1i.yolov8
 
